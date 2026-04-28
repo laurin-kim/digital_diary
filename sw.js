@@ -1,12 +1,12 @@
 const CACHE_NAME = 'daily-v1';
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/app.js',
-  '/manifest.json',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png'
+  '/digital_diary/',
+  '/digital_diary/index.html',
+  '/digital_diary/style.css',
+  '/digital_diary/app.js',
+  '/digital_diary/manifest.json',
+  '/digital_diary/icons/icon-192.png',
+  '/digital_diary/icons/icon-512.png'
 ];
 
 // Install — cache core assets
