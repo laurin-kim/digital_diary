@@ -7,7 +7,8 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/fireba
 import {
   getAuth,
   GoogleAuthProvider,
-  signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
   onAuthStateChanged,
   signOut
 } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
@@ -28,12 +29,13 @@ import {
 //  (You will get this from the Firebase console — instructions below)
 // ═══════════════════════════════════════════════════════════
 const firebaseConfig = {
-  apiKey:            "PASTE_YOUR_API_KEY_HERE",
-  authDomain:        "PASTE_YOUR_AUTH_DOMAIN_HERE",
-  projectId:         "PASTE_YOUR_PROJECT_ID_HERE",
-  storageBucket:     "PASTE_YOUR_STORAGE_BUCKET_HERE",
-  messagingSenderId: "PASTE_YOUR_MESSAGING_SENDER_ID_HERE",
-  appId:             "PASTE_YOUR_APP_ID_HERE"
+  apiKey:            "AIzaSyBfaN4pG5kgjzaraIb--KCszfXorvK_Jm8",
+     authDomain: "habit-tracker-16050.firebaseapp.com",
+    projectId: "habit-tracker-16050",
+    storageBucket: "habit-tracker-16050.firebasestorage.app",
+    messagingSenderId: "974989090611",
+    appId: "1:974989090611:web:fae27507a60dc2a6c92846",
+    measurementId: "G-1H50W9PS94"
 };
 
 // ═══════════════════════════════════════════════════════════
@@ -834,7 +836,7 @@ function bindEvents() {
   // Sign in
   document.getElementById('btn-google-signin').addEventListener('click', async () => {
     try {
-      await signInWithPopup(auth, provider);
+      await signInWithRedirect(auth, provider);
     } catch(e) {
       alert('Sign-in failed. Please try again.\n\n' + e.message);
     }
@@ -926,6 +928,9 @@ applyTheme(savedTheme);
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').catch(() => {});
 }
+
+// Handle redirect result (signInWithRedirect lands back here)
+getRedirectResult(auth).catch(() => {});
 
 // Watch auth state
 onAuthStateChanged(auth, async user => {
