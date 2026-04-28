@@ -28,7 +28,7 @@ import {
 //  (You will get this from the Firebase console — instructions below)
 // ═══════════════════════════════════════════════════════════
 const firebaseConfig = {
-   apiKey:            "AIzaSyBfaN4pG5kgjzaraIb-KCszfXorvK_Jm8",
+   apiKey:            "AIzaSyBfaN4pG5kgjzaraIb--KCszfXorvK_Jm8",
   authDomain:        "habit-tracker-16050.firebaseapp.com",
   projectId:         "habit-tracker-16050",
   storageBucket:     "habit-tracker-16050.firebasestorage.app",
